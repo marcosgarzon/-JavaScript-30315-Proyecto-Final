@@ -29,6 +29,8 @@ let arr2 = [];
   }
 })();
 
+// Autoejecutable, foto que cambia según el día de la semana
+
 let ListaDeCompras = () => {
   alert("Vamos a realizar una lista de compras");
   let term = "n";
