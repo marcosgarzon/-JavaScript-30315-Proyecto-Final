@@ -2,6 +2,35 @@
 let arrOpcion = [];
 let arr2 = [];
 
+
+
+( () => {
+let tiempo = new Date()
+let semana = tiempo.getDay()
+if (semana = 0) {
+    document.getElementById("ofert").innerHTML = "<img src='./assets/domingo.png'>"
+}
+  else if (semana = 1) {
+    document.getElementById("ofert").innerHTML = "<img src='./assets/lunes.png'>"
+  }
+  else if (semana = 2) {
+    document.getElementById("ofert").innerHTML = "<img src='./assets/martes.png'>"
+  }
+  else if (semana = 3) {
+    document.getElementById("ofert").innerHTML = "<img src='./assets/miercoles.png'>"
+  }
+  else if (semana = 4) {
+    document.getElementById("ofert").innerHTML = "<img src='./assets/jueves.png'>"
+  }
+  else if (semana = 5) {
+    document.getElementById("ofert").innerHTML = "<img src='./assets/viernes.png'>"
+  }
+else  {
+    document.getElementById("ofert").innerHTML = "<img src='./assets/sabado.png'>"
+  }
+})();
+
+
 let ListaDeCompras = () => {
     alert("Vamos a realizar una lista de compras"); 
     let term = "n";
