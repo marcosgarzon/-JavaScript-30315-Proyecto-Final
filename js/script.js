@@ -54,7 +54,7 @@ let ListaDeCompras = () => {
         
       }
     }     
-      document.getElementById("lis").innerHTML =  `Lista de compras: <li> ${arrOpcion.join("<li>")}`;
+      document.getElementById("lis").innerHTML =  `Lista de compras: <li><p class="animacion1"> ${arrOpcion.join('<li><p class="animacion1">')}`;
     return arrOpcion;
   }; 
 
@@ -75,8 +75,8 @@ let total = 0
 arr2.forEach( p => {
     total += p.valor
 })
-alert(total);
-document.getElementById("tot").innerHTML =  `Precio final: $${total}`;
+alert(`Precio final: $ ${total}`);
+document.getElementById("tot").innerHTML =  `Precio final: $ ${total}`;
 };
 
 let filtrarPres = () => {
