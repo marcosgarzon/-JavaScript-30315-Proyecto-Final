@@ -82,15 +82,7 @@ const active = document.getElementById("active");
 active.textContent = `Activos: ${elementos.length}`
 };
 
-// const agregarEnter = () => {
-//   const inputRef = document.getElementById("input");
-//   inputRef.keypress(function(event){
-//   if (event.which === 13) {
-//     agregarItem();
-//   };
-//   });
-// };
-
+// Para que el input reaccione al enter
 
 function pulsar(e) {
   if (e.keyCode === 13 && !e.shiftKey) {
