@@ -57,49 +57,24 @@
           </div>
         </div>
       </div>
-            <div class="container-fluid">
-              <div class="row">
-                <div class="alCentro col-md-6">
-                  <a
-                    class="alCentro btn btn-primary btn-lg"
-                    onclick="ListaDeCompras();"
-                    href="javascript:;"
-                    role="button"
-                  >
-                    Armar lista
-                  </a>
-                </div>
-                <div class="alCentro col-md-6">
-                  <a
-                  class="alCentro btn btn-primary btn-lg"
-                  onClick="impList();"
-                  href="javascript:;"
-                  role="button"
-                >
-                  Ingresar precios
-                </a>
-                </div>
-
-                <div class="alCentro col-md-12">
-                  <section class="alCentro fondo3">               
-                    <div><ol id="lis"></ol></div>
-                    <div id="tot"></div>
-                  </section>
-                </div>
-                <hr>
-                <div class="alCentro col-md-12">
-                    <a
-                    class="alCentro btn btn-primary btn-lg"
-                    onClick="filtrarPres();"
-                    href="javascript:;"
-                    role="button"
-                  >
-                    Filtrar productos
-                  </a>
-                  </div>
-                </div>
+      
+            <div class="container mt-5">
+              <div class="container d-flex flex-column">
+                <p class="text-end" id="active"> Lista: 5</p>
+              </div>
+              <div>
+                <!--  Input and "add" button  -->
+                <input class="submission-line__input" type="text" maxlength="20" placeholder="Ingresar producto" id="input" onkeypress="pulsar(event)">
+                <button id="agregar" onclick="agregarItem()" class="submission-line__btn">Agregar</button>
+                <!--  List, list items, and list item buttons  -->
+                <ul id="elementos" class="list">
+                  <li class="list__item"><a class="list__delete-btn">X</a>Milk<a class="list__check-btn">✔</a></li>
+                  <li class="list__item"><a class="list__delete-btn">X</a>Eggs<a class="list__check-btn">✔</a></li>
+                  <li class="list__item list__item--checked"><a class="list__delete-btn list__delete-btn--checked">X</a>Bread<a class="list__check-btn list__check-btn--checked">✔</a></li>
+                </ul>
               </div>
             </div>
+
 
     </main>
     <!-- SECCION MAIN -->
