@@ -118,11 +118,11 @@ let sum = [];
 let inRef = document.getElementsByClassName("nilai");
 for(var i=0; i<inRef.length; i++){
   if(inRef[i].value != 0 ) {
-    sum.push(parseInt(inRef[i].value));
+    sum.push(parseFloat(inRef[i].value));
 
   }
 }
-const final = parseInt(sum.reduce((acc, el) => acc + el, 0));
+const final = parseFloat(sum.reduce((acc, el) => acc + el, 0));
 
 let costoRef = document.getElementById("displayCosto");
 costoRef.innerHTML = `<p>Costo de la compra: $ ${final}</p>`

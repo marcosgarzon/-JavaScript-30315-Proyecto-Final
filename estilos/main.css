@@ -37,6 +37,10 @@ main {
   padding: 4rem 4rem 4rem 4rem;
 }
 
+.size15 {
+  font-size: 15px;
+}
+
 .btn1 {
   background-color: #3b5998;
   -webkit-text-emphasis-color: #ffffff;
