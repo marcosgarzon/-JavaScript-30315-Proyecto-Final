@@ -1,10 +1,12 @@
 .site-footer
 {
-    background-color: #3b5998;
+    background-color: #1b1e24;
     padding:45px 45px 45px 45px;
     font-size:15px;
     line-height:24px;
-
+    & p {
+      color: #9db4e7;
+    }
     & hr
     {
         border-top-color: #9db4e7;
@@ -24,11 +26,11 @@
     }
     & a
     {
-        color: #bbc5dc43;
+        color: #adb2bd;
     }
     & a:hover
     {
-        color: #0c214f;
+        color: #adb2bd;
         text-decoration:none;
     }
 
@@ -66,7 +68,7 @@
   }
   & a:active,& a:focus,& a:hover
   {
-    color: #044eed;
+    color: #adb2bd;
     text-decoration: none;
   }
   &.inline li
