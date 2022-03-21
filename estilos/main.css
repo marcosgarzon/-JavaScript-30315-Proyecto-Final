@@ -331,6 +331,23 @@ td.text-right {
   /* Funcion que hice solo para apuntar a la clase */
 }
 
+.item-lista {
+  position: relative;
+  display: block;
+  padding: 20px;
+  color: #212529;
+  text-decoration: none;
+  background: #EBEBEB;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  font-size: 16px;
+}
+
+.item-lista:hover {
+  background: #4E5066;
+  color: #FFFFFF;
+  border-top: 1px solid #22262e;
+}
+
 .nav__color {
   background-color: #87a4cfe7;
 }

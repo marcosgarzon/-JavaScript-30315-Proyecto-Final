@@ -1,4 +1,4 @@
-
+// AUTOEJECUTABLE, FOTO QUE CAMBIA SEGÚN EL DÍA DE LA SEMANA
 (() => {
   let tiempo = new Date();
   let semana = tiempo.getDay();
@@ -26,28 +26,33 @@
   }
 })();
 
-// Autoejecutable, foto que cambia según el día de la semana
 
-
-// A PARTIR DE ACA ES TODO TESTING
+// DESDE ACA ESTA POR FUERA DE FUNCIONES
 
 
 const elementosAlmacenados = localStorage.getItem("elementos");
+
 let elementos = [];
+
 
 if (elementosAlmacenados) {
   elementos = JSON.parse(elementosAlmacenados);
 };
 
+
+
 mostrarElementos();
 
+// HASTA ACA ESTA POR FUERA DE FUNCIONES
+
+// AGREGAR ITEM FUNCION
 function agregarItem () {
   const inputRef = document.getElementById("input");
   const valor = inputRef.value;
 
   
 
-// validación
+        // validación
 
 if (valor.trim()){
   elementos.push(valor);
@@ -61,6 +66,8 @@ else {
 };
 };
 
+// MOSTRAR ELEMENTOS FUNCION
+
 function mostrarElementos(){
   const contenedor = document.getElementById("elementos");
   contenedor.innerHTML = "";
@@ -68,7 +75,7 @@ function mostrarElementos(){
 
 for (const element of elementos) {
   const item = document.createElement("li");
-  item.className = "list-group-item";
+  item.className = "item-lista text-center";
   item.addEventListener("click", (e) => {
   e.target.remove();
   const index = elementos.findIndex((el) => el === e.target.textContent);
@@ -85,7 +92,8 @@ const active = document.getElementById("active");
 active.textContent = `Activos: ${elementos.length}`
 };
 
-// Para que el input reaccione al enter
+// INPUT CON ENTER DE TO DO LIST
+
 
 function pulsar(e) {
   if (e.keyCode === 13 && !e.shiftKey) {
@@ -93,6 +101,7 @@ function pulsar(e) {
   }
 };
 
+// IMPRIMIR TABLA DE COSTOS
 let tablita = () => {
 let table = document.getElementById("target");
 table.innerHTML = `<tr><th class="col-md-6">Producto</th><th class="col-md-6">Costo</th></tr>`;
@@ -103,13 +112,14 @@ elementos.forEach((el, index)=>{
 
 tablita();
 
-
+// CALCULAR COSTOS DE LA TABLA
 function calcularCosto () {
 let sum = [];
 let inRef = document.getElementsByClassName("nilai");
 for(var i=0; i<inRef.length; i++){
   if(inRef[i].value != 0 ) {
     sum.push(parseInt(inRef[i].value));
+
   }
 }
 const final = parseInt(sum.reduce((acc, el) => acc + el, 0));
