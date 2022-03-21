@@ -52,8 +52,9 @@ function agregarItem () {
 if (valor.trim()){
   elementos.push(valor);
   inputRef.value = "";
-  mostrarElementos();
   localStorage.setItem("elementos", JSON.stringify(elementos));
+  tablita();
+  mostrarElementos();
 }
 else {
   alert("Ingresa un producto");
@@ -73,6 +74,8 @@ for (const element of elementos) {
   const index = elementos.findIndex((el) => el === e.target.textContent);
   elementos.splice(index, 1);
   localStorage.setItem("elementos", JSON.stringify(elementos));
+  tablita();
+  mostrarElementos();
   })
   item.textContent = element;
   contenedor.appendChild(item);
@@ -89,3 +92,31 @@ function pulsar(e) {
     agregarItem ();
   }
 };
+
+let tablita = () => {
+let table = document.getElementById("target");
+table.innerHTML = `<tr><th class="col-md-6">Producto</th><th class="col-md-6">Costo</th></tr>`;
+elementos.forEach((el, index)=>{
+  table.innerHTML += `<tr><td> ${el} </td><td class="text-end">$ <input type="number" class="nilai text-end" placeholder="Ingresar precio"></td></tr>`;
+})
+};
+
+tablita();
+
+
+function calcularCosto () {
+let sum = [];
+let inRef = document.getElementsByClassName("nilai");
+for(var i=0; i<inRef.length; i++){
+  if(inRef[i].value != 0 ) {
+    sum.push(parseInt(inRef[i].value));
+  }
+}
+const final = parseInt(sum.reduce((acc, el) => acc + el, 0));
+
+let costoRef = document.getElementById("displayCosto");
+costoRef.innerHTML = `<p>Costo de la compra: $ ${final}</p>`
+};
+
+
+
