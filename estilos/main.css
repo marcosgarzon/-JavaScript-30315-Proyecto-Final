@@ -328,7 +328,8 @@ td.text-right {
 
 .nilai {
   border: 0.5px solid #000000;
-  /* Funcion que hice solo para apuntar a la clase */
+  width: 100%;
+  /* Funcion que hice para apuntar a la clase */
 }
 
 .item-lista {
