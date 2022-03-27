@@ -25,6 +25,8 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./estilos/main.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <title>Lista de compras</title>
   </head>
   <body>
@@ -52,7 +54,7 @@
         <div class="row">
           <div class="alCentro col-md-12">
             <h1 class="alCentro"> Lista de compras 🛒 </h1>
-            <div id="ofert">
+            <div data-aos="fade-right" id="ofert">
             </div>
           </div>
         </div>
@@ -77,7 +79,7 @@
                 <input class="submission-line__input" type="text" maxlength="20" placeholder="Ingresar producto" id="input" onkeypress="pulsar(event)">
                 <button id="agregar" onclick="agregarItem()" class="submission-line__btn">Agregar</button>
                 <!--  List, list items, and list item buttons  -->
-                <ul id="elementos" class="list">
+                <ul id="elementos" class="list" >
 
                 </ul>
               </div>
@@ -150,5 +152,10 @@
       crossorigin="anonymous"
     ></script>
     <!-- SCRIPT DE BOOTSTRAP5 -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({once: true,});
+    </script>
+     <!-- SCRIPT DE LIBRERIA AOS -->
   </body>
 </html>

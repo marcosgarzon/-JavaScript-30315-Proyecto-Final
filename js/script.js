@@ -65,9 +65,9 @@ function mostrarElementos() {
   contenedor.innerHTML = "";
 
   for (const element of elementos) {
-    const item = document.createElement("li");
-    item.className = "item-lista text-center";
-    item.addEventListener("click", (e) => {
+    const item = document.createElement("li");        
+    item.className = "item-lista text-center";       
+    item.addEventListener("click", (e) => {           
       e.target.remove();
       const index = elementos.findIndex((el) => el === e.target.textContent);
       elementos.splice(index, 1);
