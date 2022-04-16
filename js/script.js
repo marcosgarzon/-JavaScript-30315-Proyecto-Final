@@ -4,27 +4,66 @@
   let semana = tiempo.getDay();
   if (semana == 0) {
     document.getElementById("ofert").innerHTML =
-      "<img src='./assets/domingo.png'>";
+      "<p> Domingo </p>";
   } else if (semana == 1) {
     document.getElementById("ofert").innerHTML =
-      "<img src='./assets/lunes.png'>";
+    "<p> Lunes </p>";
   } else if (semana == 2) {
     document.getElementById("ofert").innerHTML =
-      "<img src='./assets/martes.png'>";
+    "<p> Martes </p>";
   } else if (semana == 3) {
     document.getElementById("ofert").innerHTML =
-      "<img src='./assets/miercoles.png'>";
+    "<p> Miércoles </p>";
   } else if (semana == 4) {
     document.getElementById("ofert").innerHTML =
-      "<img src='./assets/jueves.png'>";
+    "<p> Jueves </p>";
   } else if (semana == 5) {
     document.getElementById("ofert").innerHTML =
-      "<img src='./assets/viernes.png'>";
+    "<p> Viernes </p>";
   } else {
     document.getElementById("ofert").innerHTML =
-      "<img src='./assets/sabado.png'>";
+    "<p> Sábado </p>";
   }
 })();
+
+// API DE CLIMA
+
+async function mostrarClima() {
+  let lon;
+  let lat;
+  let temperaturaValor = document.getElementById("temperatura-valor");
+  let ciudadValor = document.getElementById("ciudad-valor");
+  let climaValor = document.getElementById("clima-valor");
+
+  navigator.geolocation && navigator.geolocation.getCurrentPosition ( ubicacion => { 
+    lon = ubicacion.coords.longitude
+    lat = ubicacion.coords.latitude
+
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=es&units=metric&appid=717511e03d5cd7a357581c1b611cd713`;
+    http://openweathermap.org/img/wn/10d@2x.png
+    console.log(url)
+
+    fetch(url)
+    .then( respuesta => respuesta.json() )
+    .then( datos => {
+         console.log(datos);
+         let temp = Math.round(datos.main.temp);
+         let ciudad = datos.name;
+         let clima = datos.weather[0].description;
+         let icono = datos.weather[0].icon;
+         const urlIcon = `http://openweathermap.org/img/wn/${icono}.png`
+         
+         temperaturaValor.textContent = `${temp}º C`;
+         ciudadValor.textContent = `${ciudad}`;
+         climaValor.innerHTML = `<p>${clima}</p> <img src="${urlIcon}">`;
+    })
+
+  });
+ 
+
+};
+
+mostrarClima();
 
 // DESDE ACA ESTA POR FUERA DE FUNCIONES
 
